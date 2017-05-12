@@ -1,5 +1,6 @@
 <section class="cart-show">
 
+<% if cart.size > 0 %>
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
@@ -49,5 +50,11 @@
       <% end %>
     </div>
   </div>
-
 </section>
+<% else %>
+<p> Empty Cart! </p>
+<%= link_to 'Take me shopping!', root_path %>
+<% end %>
+
+
+
