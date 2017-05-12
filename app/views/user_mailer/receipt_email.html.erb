@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Greetings happy shopper,</h1>
+    <p>
+      You have successfully made an order on Jungle.com!,
+    </p>
+    <h2>
+      Here is a summary of order: 
+    </h2>
+    <h3>Order Id: <%= @order.id %></h3>
+    </p>
+    <h1>Order Summary:</h1>
+      <% @order.line_items.each do |line_item| %>
+        <%= line_item.product.name %>
+        <%= line_item.quantity %>
+      <% end %>
+    <h1>Order Total: <%=@order.total_price_cents %></h1>
+    <p>Thanks for shopping and have a great day!</p>
+  </body>
+</html>
