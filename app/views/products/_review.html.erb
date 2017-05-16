@@ -1,0 +1,12 @@
+
+<body>
+  <dl class=single_review>
+    <dt> Review: </dt> 
+    <dl><%= review.description %> </dl>
+    <dt> Rating: </dt>
+    <dl><%= review.rating %> </dl>
+    <% if review.user_id === current_user.id %>
+      <%= link_to 'Delete', delete_review_path(review.product_id,review.id), method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-primary' %>
+    <% end %>
+  </dl>
+</body>

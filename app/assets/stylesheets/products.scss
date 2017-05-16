@@ -89,4 +89,21 @@ main section.products-show {
   }
 }
 
+.review_form {
+    float: left;
+    width: 20%;
+    padding-right: 300px;
+  }
 
+  .review_description {
+    display: block;
+  }
+
+  .product_reviews {
+    float: left;
+  }
+
+  .single_review {
+    border: 5px;
+    border-color: black;
+  }

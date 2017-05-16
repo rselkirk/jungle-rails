@@ -21,6 +21,19 @@ end
 
 # Let's do this ...
 
+## USERS
+
+User.destroy_all
+
+puts "Re-creating Users..."
+
+User.create!({
+  first_name: 'Jean-Luc',
+  last_name: 'Picard',
+  email: 'jlp@enterprise.com',
+  password_digest: '$2a$10$cJqD5444sZ60q6eJQgy6hO15Bj0ZVCGnUD1WsbC99rten0vWD.3ue',
+})
+
 ## CATEGORIES
 
 puts "Finding or Creating Categories ..."
@@ -132,5 +145,50 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+puts "Re-creating Reviews ..."
+
+Review.destroy_all
+
+Review.create!({
+  product_id: 1,
+  user_id: 1,
+  description: 'Merely adequate',
+  rating: 3
+})
+
+Review.create!({
+  product_id:  1,
+  user_id: 1,
+  description: 'Reasonably priced',
+  rating: 4
+})
+
+Review.create!({
+  product_id:  2,
+  user_id: 1,
+  description: 'Functional, yet stylish',
+  rating: 5
+})
+
+Review.create!({
+  product_id:  2,
+  user_id: 1,
+  description: 'Handcrafted quality',
+  rating: 4
+})
+
+Review.create!({
+  product_id:  3,
+  user_id: 1,
+  description: 'Refined, yet casual',
+  rating: 4
+})
+
+Review.create!({
+  product_id:  3,
+  user_id: 1,
+  description: 'Compact, great for travel',
+  rating: 5
+})
 
 puts "DONE!"

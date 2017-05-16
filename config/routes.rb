@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  post 'products/:product_id/reviews(.:format)' => 'reviews#create', as: :product_reviews
+  delete 'products/:product_id/:review_id' => 'reviews#delete', as: :delete_review
+
   resource :cart, only: [:show] do
     put    :add_item
     delete :remove_item
